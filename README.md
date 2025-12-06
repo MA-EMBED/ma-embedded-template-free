@@ -30,33 +30,33 @@ It does not include hardware drivers or board initialisation code.
 It is meant to be a strong foundation for your next embedded project.
 
 # Folder Structure
-/bsp
+### /bsp
     Board Support Package.
     Holds board-specific definitions such as pin mappings and configuration.
 
-/bus
+### /bus
     Low-level communication buses such as I2C, SPI or UART.
     These modules abstract raw peripheral operations.
 
-/drivers
+### /drivers
     Device drivers that sit on top of the bus layer.
     Each module represents a specific hardware component.
 
-/hal
+### /hal
     Hardware Abstraction Layer.
     Provides high-level hardware-independent APIs for the system.
 
-/services
+### /services
     Reusable functionality such as sensor managers or communication handlers.
 
-/system
+### /system
     System initialization and global logic.
     Responsible for project-wide configuration and boot sequences.
 
-/utils
+### /utils
     Helper modules including logging, timing utilities and common definitions.
 
-/app
+### /app
     Main application source files, tasks, loops and project logic.
 
 Each folder contains a minimal example file to guide you on how to structure future modules.
