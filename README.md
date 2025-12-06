@@ -1,5 +1,6 @@
 # ma-embedded-template-free
 MA Embedded – Firmware Project Template (Free Edition)
+
 A clean and organised project structure for embedded firmware development.
 This template gives you the foundation for building scalable applications on ESP32 and other microcontrollers.
 
