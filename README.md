@@ -33,6 +33,10 @@ It is meant to be a strong foundation for your next embedded project.
 ### /bsp
     Board Support Package.
     Holds board-specific definitions such as pin mappings and configuration.
+    
+### /hal
+    Hardware Abstraction Layer.
+    Provides high-level hardware-independent APIs for the system.    
 
 ### /bus
     Low-level communication buses such as I2C, SPI or UART.
@@ -41,10 +45,6 @@ It is meant to be a strong foundation for your next embedded project.
 ### /drivers
     Device drivers that sit on top of the bus layer.
     Each module represents a specific hardware component.
-
-### /hal
-    Hardware Abstraction Layer.
-    Provides high-level hardware-independent APIs for the system.
 
 ### /services
     Reusable functionality such as sensor managers or communication handlers.
