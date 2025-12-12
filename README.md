@@ -1,109 +1,160 @@
-# ma-embedded-template-free
-MA Embedded – Firmware Project Template (Free Edition)
+# MA Embedded Firmware Template (Free Edition)
 
-A clean and organised project structure for embedded firmware development.
-This template gives you the foundation for building scalable applications on ESP32 and other microcontrollers.
+A clean, scalable, and professional firmware architecture template for embedded systems.
 
-It includes:
+This template provides a clear project structure and architectural philosophy to help embedded engineers start new firmware projects with confidence, clarity, and long term maintainability in mind.
 
-- A modular folder layout
-- Starter files for each layer
-- Naming conventions and layout principles
-- Clear separation between BSP, HAL, drivers, services, system and application logic
+Instead of beginning with a blank folder and scattered files, this template gives you a proven foundation that scales from early prototypes to real products.
 
-The goal of this template is simple:
-Help embedded engineers start new projects with clarity and a solid architecture instead of reinventing the structure every time.
+---
 
-This is the free version, focused on the structure and core philosophy.
-For a full, production-ready version including working GPIO, UART, I2C, device drivers, tasks and board initialization, you can check the Pro Edition.
+## What This Template Is
 
-# Overview
+This Free Edition focuses on:
+- Project organisation
+- Layered architecture
+- Clear separation of concerns
+- Consistent naming and structure
 
-This template provides a clear and modular structure for embedded firmware projects.
-It is designed to help engineers start new applications with a solid architectural foundation instead of a blank folder and scattered files.
+It is intentionally lightweight and generic, making it suitable for:
+- ESP32
+- STM32
+- PIC / dsPIC
+- Nordic
+- NXP
+- Any bare metal or RTOS based MCU project
 
-You will find a clean separation between hardware layers, drivers, services and application logic.
-The structure is compatible with ESP32, STM32, PIC, dsPIC and many other microcontrollers.
+No board specific code or hardware drivers are included.  
+This is about how to structure firmware, not locking you into a specific platform.
 
-This Free Edition focuses on project organisation and starter files.
-It does not include hardware drivers or board initialisation code.
-It is meant to be a strong foundation for your next embedded project.
+---
 
-# Folder Structure
-### /bsp
-    Board Support Package.
-    Holds board-specific definitions such as pin mappings and configuration.
-    
-### /hal
-    Hardware Abstraction Layer.
-    Provides high-level hardware-independent APIs for the system.    
+## Folder Structure Overview
 
-### /bus
-    Low-level communication buses such as I2C, SPI or UART.
-    These modules abstract raw peripheral operations.
+```
+bsp      - Board specific configuration
+hal      - Hardware abstraction layer
+bus      - Communication buses (I2C, SPI, UART)
+drivers  - External device drivers
+services - System level logic and managers
+system   - Startup, lifecycle and global system logic
+utils    - Hardware independent helpers
+app      - Product specific application logic
+main     - Application entry point
+```
 
-### /drivers
-    Device drivers that sit on top of the bus layer.
-    Each module represents a specific hardware component.
+Each folder contains a small README.md describing its responsibility and boundaries.
 
-### /services
-    Reusable functionality such as sensor managers or communication handlers.
+---
 
-### /system
-    System initialization and global logic.
-    Responsible for project-wide configuration and boot sequences.
+## Architectural Rules
 
-### /utils
-    Helper modules including logging, timing utilities and common definitions.
+These rules are simple by design, but powerful in practice.
 
-### /app
-    Main application source files, tasks, loops and project logic.
+- Dependencies flow upward only
+- Application logic never touches hardware directly
+- Drivers are reusable and board agnostic
+- Board changes are isolated to the BSP layer
+- Each layer has a single, clear responsibility
 
-Each folder contains a minimal example file to guide you on how to structure future modules.
+Following these rules prevents firmware from turning into tightly coupled, unmaintainable code as projects grow.
 
-# Usage Instructions
-1. Clone the repository : git clone https://github.com/YOUR_USERNAME/ma-embedded-template-free.git
+---
 
-2. Use the structure for your next firmware project
+## Layer Philosophy
 
-Copy the folders into your workspace and begin adding:
+### BSP (Board Support Package)
+Contains everything that is specific to the PCB and hardware design.  
+If the board changes, this should be the only layer that needs modification.
 
-- Board-specific configuration
+### HAL (Hardware Abstraction Layer)
+Abstracts MCU peripherals and low level access.  
+Defines how the system talks to hardware, not why.
+
+### Bus
+Shared communication layers such as I2C, SPI and UART.  
+Drivers communicate through this layer instead of directly touching the MCU.
+
+### Drivers
+Drivers for external ICs and peripherals.  
+Reusable across projects and independent of application logic.
+
+### Services
+System level logic and coordination.  
+Services orchestrate drivers and expose clean interfaces upward.
+
+### System
+Startup, initialisation, reset handling and global system state.  
+This layer ties everything together cleanly.
+
+### Utils
+Pure helper utilities such as logging, timing and math.  
+No hardware knowledge belongs here.
+
+### App
+Product specific behaviour.  
+Tasks, state machines and application logic live here.
+
+---
+
+## Usage Instructions
+
+1. Clone the repository
+```
+git clone https://github.com/MA-EMBED/ma-embedded-template-free.git
+```
+
+2. Use the structure as the base for your next firmware project
+
+3. Begin adding:
+- Board specific configuration in bsp
 - HAL implementations
 - Device drivers
-- Services and logic
-- Tasks or application loops
+- Services and application logic
 
-3. MCU-independent design
+The structure is intentionally flexible and adapts to different MCUs and toolchains.
 
-This template is intentionally generic. You can use it with:
+---
 
-- Espressif -> ESP32 etc
-- ST -> STM32 etc
-- Microchip -> PIC / dsPIC
-- NXP
-- Nordic - NRF..
+## Philosophy Behind This Template
 
-Any bare-metal MCU architecture
+### Modularity
+Each layer has a clear purpose.  
+This makes individual modules easier to understand, test, and reuse.
 
-The structure encourages reusability and keeps your project organised as it grows.
+### Scalability
+The structure works for small projects and continues to make sense as systems grow more complex.
 
-# Philosophy Behind This Template
-## Modularity
+### Separation of Concerns
+Hardware, drivers, logic and application behaviour remain isolated from each other.  
+This reduces coupling and long term technical debt.
 
-Each layer has a clear purpose.
-This makes individual modules easy to modify or reuse.
+### Professional Workflow
+This layout mirrors how production grade firmware is structured in industry.  
+It is designed to support real products, not just demos.
 
-## Scalability
+---
 
-The structure supports small embedded projects and large multi-module systems.
+## Free Edition vs Extended Edition
 
-## Separation of concerns
+This Free Edition focuses on structure, rules, and architectural clarity.
 
-Drivers do not depend on the application.
-The HAL does not depend on specific hardware.
-The system layer ties everything together cleanly.
+An extended edition builds on this foundation with:
+- Fully implemented HAL modules
+- Ready to use bus layers
+- Real device drivers
+- Example services and tasks
+- Board initialisation flows
+- Practical, production oriented examples
 
-## Professional workflow
+The goal is simple:  
+Start free, learn the structure, and scale when you are ready.
 
-This layout mirrors how production-grade firmware is structured in industry.
+---
+
+### Closing Note
+
+Good firmware is not just about writing code.  
+It is about setting boundaries early and respecting them as the system grows.
+
+This template exists to help you do exactly that.
