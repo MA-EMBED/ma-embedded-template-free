@@ -12,3 +12,4 @@ Typical contents include:
 - Board identification and revision data
 
 The BSP layer isolates hardware-specific details from the rest of the firmware.
+Further design guidelines and architectural rules are documented in the extended version.
