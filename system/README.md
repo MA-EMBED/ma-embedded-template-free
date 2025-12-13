@@ -1,17 +1,14 @@
 Part of the Mark Agius Embedded Firmware Template
+
 ## System
 
-This layer handles system startup and lifecycle.
+This folder contains core system initialization and configuration code.
 
-### Belongs here
-- System initialization
-- Reset handling
-- Task startup
-- Global system state
+Typical contents include:
+- Startup logic
+- RTOS initialization
+- System state setup
+- Global configuration
 
-### Does NOT belong here
-- Application behavior
-- Device-specific logic
-
-Rule:
-This is the backbone of the firmware.
+The system layer prepares the firmware environment before application logic runs.
+Further design guidelines and architectural rules are documented in the extended version.
