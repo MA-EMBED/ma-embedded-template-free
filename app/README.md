@@ -1,15 +1,14 @@
 Part of the Mark Agius Embedded Firmware Template
-## App
 
-This layer contains product-specific application logic.
+## Application Tasks
 
-### Belongs here
-- FreeRTOS tasks
+This folder contains the application logic of the firmware.
+
+Typical contents include:
 - Application state machines
-- Product behavior
+- Product behavior logic
+- Event handling
+- Task definitions
 
-### Does NOT belong here
-- Low-level hardware access
-
-Rule:
-This is where the product behavior lives.
+The application layer defines how the product behaves and responds to events.
+Further design guidelines and architectural rules are documented in the extended version.
