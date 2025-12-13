@@ -11,3 +11,4 @@ Typical contents include:
 - Communication devices
 
 Drivers provide a structured interface to external hardware components.
+Further design guidelines and architectural rules are documented in the extended version.
