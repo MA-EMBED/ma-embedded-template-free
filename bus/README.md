@@ -10,3 +10,4 @@ Typical contents include:
 - UART interfaces
 
 The bus layer provides a common access point for communicating with external devices.
+Further design guidelines and architectural rules are documented in the extended version.
