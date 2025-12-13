@@ -1,17 +1,14 @@
 Part of the Mark Agius Embedded Firmware Template
+
 ## Utils
 
-This layer contains pure helper utilities.
+This folder contains utility modules shared across the firmware.
 
-### Belongs here
+Typical contents include:
 - Logging helpers
 - Time utilities
 - Math helpers
-- CRC and checksum helpers
+- Common macros
 
-### Does NOT belong here
-- Hardware access
-- ESP-IDF calls or other MCU manufacturer library calls (Microchip, NXP, Nordic, ST)
-
-Rule:
-Utilities must be hardware-independent.
+Utilities provide general-purpose functionality used by multiple layers.
+Further design guidelines and architectural rules are documented in the extended version.
