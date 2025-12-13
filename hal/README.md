@@ -1,3 +1,4 @@
+Part of the Mark Agius Embedded Firmware Template
 ## HAL (Hardware Abstraction Layer)
 
 This layer abstracts MCU peripherals and low-level hardware access.
