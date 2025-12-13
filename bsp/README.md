@@ -1,19 +1,14 @@
 Part of the Mark Agius Embedded Firmware Template
+
 ## BSP (Board Support Package)
 
-This layer contains everything that is specific to the PCB and board design.
+This folder contains all code and configuration that is specific to a particular hardware board.
 
-### Belongs here
+Typical contents include:
 - Pin mappings
-- GPIO default states
-- Power enable pins
-- Clock configuration
-- Board revisions
+- GPIO configuration
+- Clock setup
+- Power control signals
+- Board identification and revision data
 
-### Does NOT belong here
-- Application logic
-- Drivers
-- Business logic
-
-Rule:
-If the PCB changes, this is the only layer that should need modification.
+The BSP layer isolates hardware-specific details from the rest of the firmware.
