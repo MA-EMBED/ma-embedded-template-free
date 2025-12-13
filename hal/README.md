@@ -1,18 +1,7 @@
 Part of the Mark Agius Embedded Firmware Template
+
 ## HAL (Hardware Abstraction Layer)
 
-This layer abstracts MCU peripherals and low-level hardware access.
+This folder contains hardware abstraction helpers that sit above the BSP and bus layers.
 
-### Belongs here
-- GPIO abstraction
-- ADC abstraction
-- PWM abstraction
-- Timers
-
-### Does NOT belong here
-- Device drivers
-- Pin definitions
-- Application logic
-
-Rule:
-HAL defines how to talk to the MCU, not why.
+The HAL layer simplifies access to hardware features and provides a consistent interface to higher layers of the firmware.
