@@ -1,18 +1,13 @@
 Part of the Mark Agius Embedded Firmware Template
+
 ## Drivers
 
-This layer contains drivers for external ICs and peripherals.
+This folder contains driver implementations for external ICs and peripherals.
 
-### Belongs here
+Typical contents include:
 - Sensors
-- Power ICs
+- Power management ICs
 - IO expanders
-- Communication ICs
+- Communication devices
 
-### Does NOT belong here
-- Pin numbers
-- Application logic
-- ESP-IDF calls or other MCU manufacturer library calls (Microchip, NXP, Nordic, ST)
-
-Rule:
-Drivers must be reusable and hardware-agnostic.
+Drivers provide a structured interface to external hardware components.
