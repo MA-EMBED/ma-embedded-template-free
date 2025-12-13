@@ -1,16 +1,13 @@
 Part of the Mark Agius Embedded Firmware Template
+
 ## Services
 
-This layer contains system-level logic and coordination.
+This folder contains reusable services that implement system-level functionality.
 
-### Belongs here
-- State machines
-- Monitoring logic
-- Managers and controllers
+Typical contents include:
+- Device managers
+- System monitors
+- State handling modules
+- Background processing services
 
-### Does NOT belong here
-- Pin definitions
-- Low-level drivers
-
-Rule:
-Services orchestrate drivers and expose clean interfaces upward.
+Services are intended to be reusable across multiple projects.
