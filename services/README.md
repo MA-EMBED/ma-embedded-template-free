@@ -11,3 +11,4 @@ Typical contents include:
 - Background processing services
 
 Services are intended to be reusable across multiple projects.
+Further design guidelines and architectural rules are documented in the extended version.
