@@ -1,16 +1,12 @@
 Part of the Mark Agius Embedded Firmware Template
-## Bus Layer
 
-This layer provides shared communication interfaces.
+## Bus
 
-### Belongs here
-- I2C bus wrappers
-- SPI bus wrappers
-- UART bus wrappers
+This folder contains communication bus implementations used by the system.
 
-### Does NOT belong here
-- Device-specific logic
-- Application state
+Typical contents include:
+- I2C bus helpers
+- SPI bus helpers
+- UART interfaces
 
-Rule:
-Drivers must communicate through this layer.
+The bus layer provides a common access point for communicating with external devices.
