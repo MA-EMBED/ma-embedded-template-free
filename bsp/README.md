@@ -1,3 +1,4 @@
+Part of the Mark Agius Embedded Firmware Template
 ## BSP (Board Support Package)
 
 This layer contains everything that is specific to the PCB and board design.
